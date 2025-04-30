@@ -41,7 +41,6 @@ public class KafkaConnectController {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
-
         ResponseEntity<String> response = restTemplate.postForEntity(KAFKA_CONNECT_URL, request, String.class);
 
         return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
